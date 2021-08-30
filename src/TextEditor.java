@@ -16,7 +16,7 @@ public class TextEditor extends JFrame {
 	private String nome_do_arquivo;
 	private JMenuBar mnBarra;
 	private JMenu mnFonte, mnTamanho, mnEstilo, mnCor, mnLimpar;
-	private JMenuItem miArial, mi12, miNegrito, miRed, miLimpar, miCalibri, miComicsans, migreen, miblue;
+	private JMenuItem miArial, mi12, mi14, mi16, miNegrito, miItalico, miPlain, miRed, miLimpar, miCalibri, miComicsans, migreen, miblue;
 
 	public static void main(String args[]) {
 		JFrame frame = new TextEditor();
@@ -50,7 +50,11 @@ public class TextEditor extends JFrame {
 		miCalibri = new JMenuItem("Calibri");
 		miComicsans = new JMenuItem("Comic sans");
 		mi12 = new JMenuItem("12");
+		mi14 = new JMenuItem("14");
+		mi16 = new JMenuItem("16");
 		miNegrito = new JMenuItem("Negrito");
+		miItalico = new JMenuItem("Itálico");
+		miPlain = new JMenuItem("Padrão");
 		miRed = new JMenuItem("Vermelho");
 		migreen = new JMenuItem("Verde");
 		miblue = new JMenuItem("Azul");
@@ -75,8 +79,12 @@ public class TextEditor extends JFrame {
 		mnFonte.add(miArial);
 		mnFonte.add(miCalibri);
 		mnFonte.add(miComicsans);
+		mnEstilo.add(miPlain);
 		mnEstilo.add(miNegrito);
+		mnEstilo.add(miItalico);
 		mnTamanho.add(mi12);
+		mnTamanho.add(mi14);
+		mnTamanho.add(mi16);
 		mnCor.add(miRed);
 		mnCor.add(migreen);
 		mnCor.add(miblue);
@@ -114,6 +122,37 @@ public class TextEditor extends JFrame {
 		miRed.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				taTexto.setForeground(Color.red);
+			}
+		});
+		miPlain.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				taTexto.setFont(new Font("Arial", Font.PLAIN, 12));
+			}
+		});
+		miNegrito.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				taTexto.setFont(new Font("Arial", Font.BOLD, 12));
+			}
+		});
+		miItalico.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				taTexto.setFont(new Font("Arial", Font.ITALIC, 12));
+			}
+		});
+		
+		mi12.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				taTexto.setFont(new Font("Arial", 0, 12));
+			}
+		});
+		mi14.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				taTexto.setFont(new Font("Arial", 0, 14));
+			}
+		});
+		mi16.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				taTexto.setFont(new Font("Arial", 0, 16));
 			}
 		});
 		migreen.addActionListener(new ActionListener() {
